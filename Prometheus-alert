@@ -1,0 +1,8 @@
+# Example of a Prometheus alert rule to notify when CPU utilization is low
+ALERT LowCPUUtilization
+  IF rate(node_cpu_seconds_total{mode="system"}[5m]) < 10%
+  FOR 5m
+  ANNOTATIONS {
+    summary = "Low CPU utilization detected",
+    description = "The current CPU utilization is less than 10%",
+  }
