@@ -1,0 +1,2 @@
+# Example of a Prometheus query to collect CPU utilization metrics
+rate(node_cpu_seconds_total{mode="system"}[5m])
